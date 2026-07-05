@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Реєстр Клинків — Каталог зброї MM2</title>
+<meta name="description" content="Довідковий каталог 100 предметів зброї з Murder Mystery 2: рідкість, походження, рік появи." />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-mark">РК</span>
+      Реєстр Клинків <span class="brand-sub">довідник MM2</span>
+    </div>
+    <span class="header-note"><span id="total-count">100</span> позицій · без оплати</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero container">
+    <div class="hero-eyebrow">Довідковий каталог</div>
+    <h1 class="hero-title">Кожне лезо<br /><em>має свою історію.</em></h1>
+    <p class="hero-desc">
+      Повний перелік зброї Murder Mystery 2 — від найпростіших базових моделей
+      до найрідкісніших предметів колекції. Гортай, фільтруй за рідкістю й
+      дізнавайся походження кожного скіна.
+    </p>
+  </section>
+
+  <section class="stats-section container">
+    <div id="stats-bar" aria-label="Розподіл предметів за рідкістю"></div>
+  </section>
+
+  <section class="filter-bar">
+    <div class="container">
+      <div class="filter-row">
+        <div class="search-wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="text" id="search-input" placeholder="Пошук за назвою чи серією…" aria-label="Пошук предметів" />
+        </div>
+        <div class="select-wrap">
+          <select id="category-select" aria-label="Категорія">
+            <option value="all">Усі категорії</option>
+          </select>
+        </div>
+        <div class="select-wrap">
+          <select id="sort-select" aria-label="Сортування">
+            <option value="default">За замовчуванням</option>
+            <option value="rarity-desc">Рідкість: спадання</option>
+            <option value="rarity-asc">Рідкість: зростання</option>
+            <option value="name-asc">Назва: А–Я</option>
+            <option value="year-desc">Рік: новіші</option>
+            <option value="year-asc">Рік: старіші</option>
+          </select>
+        </div>
+      </div>
+      <div class="chip-row" id="rarity-filters" role="group" aria-label="Фільтр за рідкістю"></div>
+      <div class="result-count" id="result-count"></div>
+    </div>
+  </section>
+
+  <section class="catalog-section container">
+    <div class="catalog-grid" id="catalog-grid"></div>
+    <div class="empty-state" id="empty-state" hidden>
+      <h3>Нічого не знайдено</h3>
+      <p>Спробуй інший запит або скинь фільтри.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>Реєстр Клинків</strong> — незалежний довідковий каталог, зроблений фанатами.
+    Усі назви й описи мають ілюстративний характер. Сайт не пов'язаний з Roblox Corporation
+    і не проводить жодних платежів чи транзакцій.</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modal-overlay" hidden>
+  <div class="modal-panel" id="modal-panel" role="dialog" aria-modal="true"></div>
+</div>
+
+<script src="data/weapons.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/render.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
